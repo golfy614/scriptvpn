@@ -14,7 +14,7 @@ LIGHT='\033[0;37m'
 MYIP=$(wget -qO- ipinfo.io/ip);
 # ==================================================
 # Link Hosting Kalian
-java="https://raw.githubusercontent.com/wehoi/freesc/main/menu"
+akbarvpn="raw.githubusercontent.com/lizsvr/cfnfree/main/ssh"
 
 #
 cd
@@ -25,12 +25,12 @@ success="${GREEN} [OK] ${NC}"
 source /var/lib/akbarstorevpn/ipvps.conf
 if [[ "$IP" = "" ]]; then
     clear
-    echo -e " ${error1}การติดตั้งล้มเหลว!!"
+    echo -e " ${error1}Gagal Install-tools.."
     sleep 2
     exit 0
 else
     clear
-    echo -e "${success}การติดตั้งสำเร็จ"
+    echo -e "${success}Installasi Tolls..."
     sleep2
 fi
 # Edit file /etc/systemd/system/rc-local.service
@@ -139,8 +139,8 @@ echo "neofetch" >> .profile
 apt -y install nginx php php-fpm php-cli php-mysql libxml-parser-perl
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
-curl https://${java}/nginx.conf > /etc/nginx/nginx.conf
-curl https://${java}/vps.conf > /etc/nginx/conf.d/vps.conf
+curl https://${akbarvpn}/nginx.conf > /etc/nginx/nginx.conf
+curl https://${akbarvpn}/vps.conf > /etc/nginx/conf.d/vps.conf
 sed -i 's/listen = \/var\/run\/php-fpm.sock/listen = 127.0.0.1:9000/g' /etc/php/fpm/pool.d/www.conf
 useradd -m vps;
 mkdir -p /home/vps/public_html
@@ -148,7 +148,7 @@ echo "<?php phpinfo() ?>" > /home/vps/public_html/info.php
 chown -R www-data:www-data /home/vps/public_html
 chmod -R g+rw /home/vps/public_html
 cd /home/vps/public_html
-wget -O /home/vps/public_html/index.html "https://${java}/index.html1"
+wget -O /home/vps/public_html/index.html "https://${akbarvpn}/index.html1"
 /etc/init.d/nginx restart
 cd
 cd
