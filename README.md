@@ -5,7 +5,7 @@
 - ***เครดิต  SL***
 #
 
-# FITUR XRAY TLS
+# พอร์ต XRAY TLS
 - TROJAN WS        : **443**
 - TROJAN GRPC      : **443**
 - SHADOWSOCKS WS   : **443**
@@ -15,7 +15,7 @@
 - VLESS WS         : **443**
 - VLESS GRPC       : **443**
 
-# FITUR XRAY HTTP
+# พอร์ต XRAY HTTP
 - TROJAN WS        : **80**
 - TROJAN GRPC      : **80**
 - SHADOWSOCKS WS   : **80**
