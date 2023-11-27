@@ -35,17 +35,16 @@
 - จำเป็นต้องมีโดเมน หากไม่มีโดเมน จำเป็นต้องแปลงไอพี สามารถหาได้ที่เว็บฟรีต่างๆ
 
 # วิธีการรันสคริป
-
-1. ล๊อกอิน VPS แล้ว ก๊อปลืงก์นี้ไปวางใน VPS
+- ล๊อกอิน VPS แล้ว ก๊อปลืงก์นี้ไปวางใน VPS
 ```
 wget https://raw.githubusercontent.com/wehoi/freesc/main/setup.sh && chmod +x setup.sh && ./setup.sh
 ```
-2. หากลงรันสคริปเรียบร้อยแล้ว สามารถเข้า VPS แล้วพิมพ์
+- หากลงรันสคริปเรียบร้อยแล้ว สามารถเข้า VPS แล้วพิมพ์
 
 ```
 menu
 ```
-3. เรียบร้อย
+- เรียบร้อย
 
 
-หากมีเจอปัญหาในการรันสคริป สามารถติดต่อได้ที่ Whatsapp : +66934567688 Telegram : https://t.me/yallaaj Line : https://line.me/ti/p/V8OKlaIlra
+***หากมีเจอปัญหาในการรันสคริป สามารถติดต่อได้ที่ Whatsapp : +66934567688 Telegram : https://t.me/yallaaj Line : https://line.me/ti/p/V8OKlaIlra
