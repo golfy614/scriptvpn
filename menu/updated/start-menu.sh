@@ -61,7 +61,7 @@ echo -e "$CLAY Time Zone :$NC $timezone $NC"
 echo -e "$CLAY Date :$NC $(date +%A) $(date +%m-%d-%Y)"
 echo -e "$CLAY Memory :$NC $memory $NC"
 echo -e "************************************************************"
-echo -e "       $ORANGE ✶ สถานะ ✶      "
+echo -e "            ✶ สถานะ ✶      "
 echo -e "************************************************************"
 #
 #
@@ -129,5 +129,5 @@ fi
 # echo -e " Fail2ban                :$RED [Error] $NC"
 # fi
 echo -e "************************************************************"
-echo -e "       $ORANGE ✶ JAVA ✶      "
+echo -e "                    ✶ JAVA ✶      "
 echo -e "************************************************************"
