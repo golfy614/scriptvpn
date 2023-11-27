@@ -39,7 +39,7 @@
 
 1. ล๊อกอิน VPS แล้ว ก๊อปลืงก์นี้ไปวางใน VPS
 ```
-wget https://raw.githubusercontent.com/lizsvr/XRAY-MULTI/main/setup.sh && chmod +x setup.sh && ./setup.sh
+wget https://raw.githubusercontent.com/wehoi/freesc/main/setup.sh && chmod +x setup.sh && ./setup.sh
 ```
 2. หากลงรันสคริปเรียบร้อยแล้ว สามารถเข้า VPS แล้วพิมพ์
 
