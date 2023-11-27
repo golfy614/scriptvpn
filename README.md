@@ -2,9 +2,8 @@
 
 # สคริป XRAY MULTI PORT 
 - สคริปสำหรับ  XRAY PORT 443/80 Moded By JAVA 
-- เครดิต  SL 
-#
-
+- เครดิต  SL
+  
 # พอร์ต XRAY TLS
 - TROJAN WS        : 443
 - TROJAN GRPC      : 443
