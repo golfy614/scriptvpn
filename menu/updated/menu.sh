@@ -19,7 +19,24 @@ echo -e "******************* WELCOME TO JAVANET *********************"
 echo -e "****************** Auto Scrip By jAvaNet *******************"
 echo -e "**LINE:javanet**** Whatsapp:+66934567688 *****FB:javajaja***"
 echo -e "************************************************************"
-echo -e                      [ หน้าหลัก ]       
+echo -e "                    ข้อมูลวีพีเอส                "
+echo -e "************************************************************"
+uphours=`uptime -p | awk '{print $2,$3}' | cut -d , -f1`
+upminutes=`uptime -p | awk '{print $4,$5}' | cut -d , -f1`
+uptimecek=`uptime -p | awk '{print $6,$7}' | cut -d , -f1`
+cekup=`uptime -p | grep -ow "day"`
+IPVPS=$(curl -s ipinfo.io/ip )
+ISPVPS=$( curl -s ipinfo.io/org )
+#clear
+if [ "$cekup" = "day" ]; then
+echo -e "System Uptime   :  $uphours $upminutes $uptimecek"
+else
+echo -e "System Uptime   :  $uphours $upminutes"
+fi
+echo -e "IP-VPS          :  $IPVPS"
+echo -e "ISP-VPS         :  $ISPVPS"
+echo -e "************************************************************"
+echo -e                      เมนูหลัก       
 echo -e "************************************************************"
 echo -e "$NC          1$NC. สร้างบัญชี              "
 echo -e "$NC          2$NC. รีสตาร์ทบริการทั้งหมด          "
