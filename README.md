@@ -47,4 +47,7 @@ menu
 - เรียบร้อย
 
 
-***หากมีเจอปัญหาในการรันสคริป สามารถติดต่อได้ที่ Whatsapp : +66934567688 Telegram : https://t.me/yallaaj Line : https://line.me/ti/p/V8OKlaIlra
+- หากมีเจอปัญหาในการรันสคริป สามารถติดต่อได้ที่ 
+Whatsapp : +66934567688 
+Telegram : https://t.me/yallaaj 
+Line : https://line.me/ti/p/V8OKlaIlra
