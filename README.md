@@ -37,7 +37,7 @@
 # วิธีการรันสคริป
 - ล๊อกอิน VPS แล้ว ก๊อปลืงก์นี้ไปวางใน VPS
 ```
-apt update && apt upgrade -y && update-grub && sleep 2 && sysctl -w net.ipv6.conf.all.disable_ipv6=1 && sysctl -w net.ipv6.conf.default.disable_ipv6=1 && apt install lolcat -y && apt update && apt upgrade && apt install -y bzip2 gzip coreutils screen curl unzip && wget https://raw.githubusercontent.com/wehoi/freesc/main/setup.sh && chmod +x setup.sh && ./setup.sh
+apt update && apt upgrade -y && update-grub && sleep 2 && sysctl -w net.ipv6.conf.all.disable_ipv6=1 && sysctl -w net.ipv6.conf.default.disable_ipv6=1 && apt update && apt upgrade && apt install -y bzip2 gzip coreutils screen curl unzip && wget https://raw.githubusercontent.com/wehoi/freesc/main/setup.sh && chmod +x setup.sh && ./setup.sh
 ```
 - หากลงรันสคริปเรียบร้อยแล้ว สามารถเข้า VPS แล้วพิมพ์
 
