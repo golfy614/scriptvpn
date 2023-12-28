@@ -48,5 +48,5 @@ menu
 
 # หากมีเจอปัญหาในการรันสคริป สามารถติดต่อได้ที่ 
 Whatsapp : +66934567688 
-Telegram : https://t.me/yallaaj 
+Telegram : https://t.me/java00777
 Line : https://line.me/ti/p/V8OKlaIlra
