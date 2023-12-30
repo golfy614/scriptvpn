@@ -20,20 +20,21 @@ echo -e "****************** Auto Scrip By JAVANET *******************"
 echo -e "************************************************************"
 echo -e "                    ข้อมูลวีพีเอส                "
 echo -e "************************************************************"
-uphours=`uptime -p | awk '{print $2,$3}' | cut -d , -f1`
-upminutes=`uptime -p | awk '{print $4,$5}' | cut -d , -f1`
-uptimecek=`uptime -p | awk '{print $6,$7}' | cut -d , -f1`
-cekup=`uptime -p | grep -ow "day"`
+ISP=$(curl -s ipinfo.io/org | cut -d " " -f 2-10 )
+CITY=$(curl -s ipinfo.io/city )
+WKT=$(curl -s ipinfo.io/timezone )
 IPVPS=$(curl -s ipinfo.io/ip )
-ISPVPS=$( curl -s ipinfo.io/org )
-#clear
-if [ "$cekup" = "day" ]; then
-echo -e "System Uptime   :  $uphours $upminutes $uptimecek"
-else
-echo -e "System Uptime   :  $uphours $upminutes"
-fi
-echo -e "IP-VPS          :  $IPVPS"
-echo -e "ISP-VPS         :  $ISPVPS"
+jam=$(date +"%T")
+hari=$(date +"%A")
+tnggl=$(date +"%d-%B-%Y")
+domain=$(cat /etc/v2ray/domain)
+echo -e "* TIME          : $jam"
+echo -e "* DAY           : $hari"
+echo -e "* DATE          : $tnggl"
+echo -e "* SERVER        : $ISP"
+echo -e "* City          : $CITY"
+echo -e "* IP VPS        : $IPVPS"
+echo -e "* DOMAIN        : $domain"
 echo -e "************************************************************"
 echo -e                      เมนูหลัก       
 echo -e "************************************************************"
