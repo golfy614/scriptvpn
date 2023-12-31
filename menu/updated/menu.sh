@@ -27,7 +27,7 @@ IPVPS=$(curl -s ipinfo.io/ip )
 jam=$(date +"%T")
 hari=$(date +"%A")
 tnggl=$(date +"%d-%B-%Y")
-domain=$(cat /etc/v2ray/domain)
+domain=$(cat /etc/xray/domain)
 echo -e "* TIME          : $jam"
 echo -e "* DAY           : $hari"
 echo -e "* DATE          : $tnggl"
