@@ -70,24 +70,30 @@ echo "IP=" >> /var/lib/akbarstorevpn/ipvps.conf
 cd
 #
 # Add Domain
-wget https://raw.githubusercontent.com/wehoi/freesc/main/updated/adddomain.sh && chmod +x adddomain.sh && ./adddomain.sh
+wget https://raw.githubusercontent.com/golfy614/scriptvpn/main/updated/adddomain.sh && chmod +x adddomain.sh && ./adddomain.sh
 #
 echo '============================================='
 echo '        กำลังติดตั้ง  Tools '
 echo '============================================='
 sleep 3
-wget https://raw.githubusercontent.com/wehoi/freesc/main/install-tools.sh && chmod +x install-tools.sh && ./install-tools.sh
+wget https://raw.githubusercontent.com/golfy614/scriptvpn/main/install-tools.sh && chmod +x install-tools.sh && ./install-tools.sh
 #
 echo '============================================='
 echo '        กำลังติดตั้ง XRAY CORE '
 echo '============================================='
 sleep 3
-wget https://raw.githubusercontent.com/wehoi/freesc/main/install-xray.sh && chmod +x install-xray.sh && ./install-xray.sh
+wget https://raw.githubusercontent.com/golfy614/scriptvpn/main/install-tools.sh && chmod +x install-tools.sh && ./install-tools.sh
+#
+echo '============================================='
+echo '        กำลังติดตั้ง SSL TUNNEL '
+echo '============================================='
+sleep 3
+wget https://raw.githubusercontent.com/golfy614/scriptvpn/main/install-ssl.sh && chmod +x install-ssl.sh && ./install-ssl.sh
 echo '============================================='
 echo '        กำลังติดตั้ง Menu '
 echo '============================================='
 sleep 3
-wget https://raw.githubusercontent.com/wehoi/freesc/main/menu/updatedll.sh && chmod +x updatedll.sh && ./updatedll.sh
+wget https://raw.githubusercontent.com/golfy614/scriptvpn/main/menu/updatedll.sh && chmod +x updatedll.sh && ./updatedll.sh
 #
 #SELESAI
 # collor status
@@ -122,6 +128,7 @@ else
 	echo ""  | tee -a log-install.txt
 	echo "   >>> บริการ & พอร์ต "  | tee -a log-install.txt
 	echo "   - Nginx                      : 89"  | tee -a log-install.txt
+	echo "   - SSL / TLS                  : 443"  | tee -a log-install.txt
 	echo "   - XRAYS TROJAN WS TLS        : 443"  | tee -a log-install.txt
 	echo "   - XRAYS SHADOWSOCKS WS TLS   : 443"  | tee -a log-install.txt
 	echo "   - XRAYS VLESS WS TLS         : 443"  | tee -a log-install.txt

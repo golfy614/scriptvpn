@@ -38,17 +38,18 @@ echo -e "* DOMAIN        : $domain"
 echo -e "************************************************************"
 echo -e                      เมนูหลัก       
 echo -e "************************************************************"
-echo -e "$NC          1$NC. สร้างบัญชี              "
-echo -e "$NC          2$NC. รีสตาร์ทบริการทั้งหมด          "
-echo -e "$NC          3$NC. ตรวจสอบพอร์ต             "
-echo -e "$NC          4$NC. ตรวจสอบบริการ                 "
-echo -e "$NC          5$NC. ตั้งค่า                  "
-echo -e "$NC          6$NC. ออก                        "
+echo -e "$NC          1$NC. สร้างบัญชี X-Ray Core        "
+echo -e "$NC          2$NC. สร้างบัญชี SSL Tunnel        "
+echo -e "$NC          3$NC. รีสตาร์ทบริการทั้งหมด          "
+echo -e "$NC          4$NC. ตรวจสอบพอร์ต             "
+echo -e "$NC          5$NC. ตรวจสอบบริการ                 "
+echo -e "$NC          6$NC. ตั้งค่า                  "
+echo -e "$NC          7$NC. ออก                        "
 echo -e "************************************************************"
 echo -e "$NC หากตรวจเจอปัญหาติดต่อแอดมิน Telegram https://t.me/java00777 "  
 echo -e "$NC Copyright JAVA " 
 echo -e "************************************************************"
-read -p " โปรดเลือก [ 1 - 6 ] : " menu
+read -p " โปรดเลือก [ 1 - 7 ] : " menu
 echo -e "************************************************************"
 echo -e ""
 case $menu in
@@ -56,18 +57,21 @@ case $menu in
 maddxray
 ;;
 2)
-restart-xray
+maddssl
 ;;
 3)
-cek-port
+restart-xray
 ;;
 4)
+cek-port
+;;
+5)
 start-menu
 ;;
-5)
+6)
 msettings
 ;;
-5)
+7)
 clear
 exit
 ;;

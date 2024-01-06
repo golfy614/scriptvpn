@@ -30,12 +30,12 @@ else
 fi
 # ==========================================
 # link hosting kalian
-aj="https://raw.githubusercontent.com/wehoi/freesc/main/menu"
-java="https://raw.githubusercontent.com/wehoi/freesc/main/menu/updated"
-javaa="https://raw.githubusercontent.com/wehoi/freesc/main/updated"
+aj="https://raw.githubusercontent.com/golfy614/scriptvpn/main/menu"
+java="https://raw.githubusercontent.com/golfy614/scriptvpn/main/menu/updated"
+javaa="https://raw.githubusercontent.com/golfy614/scriptvpn/main/updated"
 cd
 rm -r updatedll
-wget -O updatedll "https://raw.githubusercontent.com/wehoi/freesc/main/menu/updatedll.sh"
+wget -O updatedll "https://raw.githubusercontent.com/golfy614/scriptvpn/main/menu/updatedll.sh"
 rm -rf updatedll
 
 # hapus
@@ -47,23 +47,25 @@ rm -r updatedll
 #
 cd /usr/bin
 # update by SL
-wget -O xmenu "https://raw.githubusercontent.com/wehoi/freesc/main/menu/xmenu.sh"
-wget -O add-akun "https://raw.githubusercontent.com/wehoi/freesc/main/menu/add-akun.sh"
-wget -O updatedll "https://raw.githubusercontent.com/wehoi/freesc/main/menu/updatedll.sh"
-wget -O add-akun "https://raw.githubusercontent.com/wehoi/freesc/main/menu/add-akun.sh"
-wget -O delete-akun "https://raw.githubusercontent.com/wehoi/freesc/main/menu/delete-akun.sh"
+wget -O xmenu "https://raw.githubusercontent.com/golfy614/scriptvpn/main/menu/xmenu.sh"
+wget -O add-akun "https://raw.githubusercontent.com/golfy614/scriptvpn/main/menu/add-akun.sh"
+wget -O updatedll "https://raw.githubusercontent.com/golfy614/scriptvpn/main/menu/updatedll.sh"
+wget -O add-akun "https://raw.githubusercontent.com/golfy614/scriptvpn/main/menu/add-akun.sh"
+wget -O delete-akun "https://raw.githubusercontent.com/golfy614/scriptvpn/main/menu/delete-akun.sh"
 wget -O certv2ray "https://raw.githubusercontent.com/fisabiliyusri/Mantap/main/xray/certv2ray.sh"
-wget -O restart-xray "https://raw.githubusercontent.com/wehoi/freesc/main/menu/restart-xray.sh"
-wget -O xmenu "https://raw.githubusercontent.com/wehoi/freesc/main/menu/xmenu.sh"
-wget -O auto-pointing "https://raw.githubusercontent.com/wehoi/freesc/main/menu/auto-pointing.sh"
-wget -O cek-port "https://raw.githubusercontent.com/wehoi/freesc/main/menu/cek-port.sh"
-wget -O xmenu "https://raw.githubusercontent.com/wehoi/freesc/main/menu/xmenu.sh"
+wget -O restart-xray "https://raw.githubusercontent.com/golfy614/scriptvpn/main/menu/restart-xray.sh"
+wget -O xmenu "https://raw.githubusercontent.com/golfy614/scriptvpn/main/menu/xmenu.sh"
+wget -O auto-pointing "https://raw.githubusercontent.com/golfy614/scriptvpn/main/menu/auto-pointing.sh"
+wget -O cek-port "https://raw.githubusercontent.com/golfy614/scriptvpn/main/menu/cek-port.sh"
+wget -O xmenu "https://raw.githubusercontent.com/golfy614/scriptvpn/main/menu/xmenu.sh"
 # Update menu
 wget -O menu "${java}/menu.sh"
 wget -O msettings "${java}/msetting.sh"
 wget -O maddxray "${java}/maddxray.sh"
+wget -O maddssl "${java}/maddssl.sh"
 wget -O start-menu "${java}/start-menu.sh"
-# update xray menu
+# update menu
+wget -O addssl "${javaa}/addssl.sh"
 wget -O addvmess "${javaa}/addvmess.sh"
 wget -O dellvmess "${javaa}/dellvmess.sh"
 wget -O rennewvmess "${javaa}/rennewvmess.sh"
@@ -97,9 +99,11 @@ chmod +x cek-port
 # update menu
 chmod +x msettings
 chmod +x maddxray
+chmod +x maddssl
 chmod +x start-menu
 chmod +x menu
 # update xray menu
+chmod +x addssl
 chmod +x addvmess
 chmod +x dellvmess
 chmod +x rennewvmess
