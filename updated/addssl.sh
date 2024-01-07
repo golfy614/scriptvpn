@@ -2,82 +2,87 @@
 cd /etc/stunnel && wget https://raw.githubusercontent.com/golfy614/scriptovpn/main/Install/stunnel.pem && cd $HOME
 
 ##############################
-#!/bin/bash
 IP=$(cat /etc/IP)
-if [ ! -d /etc/SSHPlus/userteste ]; then
-mkdir /etc/SSHPlus/userteste
-fi
-tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-15s\n' "Create test user" ; tput sgr0
+tput setaf 7;tput setab 4;tput bold;printf '%30s%s%-15s\n' "Create SSH User";tput sgr0
 echo ""
-[ "$(ls -A /etc/SSHPlus/userteste)" ] && echo -e "\033[1;32mTest User Active!\033[1;37m" || echo -e "\033[1;31mNo active tests user!\033[0m"
-echo ""
-for testeson in $(ls /etc/SSHPlus/userteste |sort |sed 's/.sh//g')
-do
-echo "$testeson"
-done
-echo ""
-echo -ne "\033[1;32mUser name\033[1;37m: "; read nome
-if [[ -z $nome ]]
-then
-echo ""
-tput setaf 7 ; tput setab 1 ; tput bold ; echo "" ; echo "Empty or invalid name." ; echo "" ; tput sgr0
+echo -ne "\033[1;32mUsername:\033[1;37m ";read username
+[[ -z $username ]] && {
+	echo -e "\n${cor1}Empty or invalid username!${scor}\n"
 	exit 1
-fi
-awk -F : ' { print $1 }' /etc/passwd > /tmp/users 
-if grep -Fxq "$nome" /tmp/users
-then
-	tput setaf 7 ; tput setab 1 ; tput bold ; echo "" ; echo "This user already exists." ; echo "" ; tput sgr0
+}
+[[ "$(grep -wc $username /etc/passwd)" != '0' ]] && {
+	echo -e "\n${cor1}This user already exists. try another name!${scor}\n"
 	exit 1
-fi
-echo -ne "\033[1;32mPassword\033[1;37m: "; read pass
-if [[ -z $pass ]]
-then
-echo ""
-tput setaf 7 ; tput setab 1 ; tput bold ; echo "" ; echo "Password empty or invalid." ; echo "" ; tput sgr0
+}
+[[ ${username} != ?(+|-)+([a-zA-Z0-9]) ]] && {
+	echo -e "\n${cor1}You entered an invalid username!${scor}"
+	echo -e "${cor1}Do not use spaces, accents or special characters!${scor}\n"
 	exit 1
-fi
-echo -ne "\033[1;32mLimit\033[1;37m: "; read limit
-if [[ -z $limit ]]
-then
-echo ""
-tput setaf 7 ; tput setab 1 ; tput bold ; echo "" ; echo "Empty or invalid limit." ; echo "" ; tput sgr0
+}
+sizemin=$(echo ${#username})
+[[ $sizemin -lt 2 ]] && {
+	echo -e "\n${cor1}You entered a very short username${scor}"
+	echo -e "${cor1}use at least two characters!${scor}\n"
 	exit 1
-fi
-echo -ne "\033[1;32mMinutes \033[1;33m(\033[1;31mEx: \033[1;37m60\033[1;33m)\033[1;37m: "; read u_temp
-if [[ -z $limit ]]
-then
-echo ""
-tput setaf 7 ; tput setab 1 ; tput bold ; echo "" ; echo "Empty or invalid limit." ; echo "" ; tput sgr0
+}
+sizemax=$(echo ${#username})
+[[ $sizemax -gt 10 ]] && {
+	echo -e "\n${cor1}You entered a very long username"
+	echo -e "${cor1}use a maximum of 10 characters!${scor}\n"
 	exit 1
-fi
-useradd -M -s /bin/false $nome
-(echo $pass;echo $pass) |passwd $nome > /dev/null 2>&1
-echo "$pass" > /etc/SSHPlus/senha/$nome
-echo "$nome $limit" >> /root/users.db
-echo "#!/bin/bash
-pkill -f "$nome"
-userdel --force $nome
-grep -v ^$nome[[:space:]] /root/users.db > /tmp/ph ; cat /tmp/ph > /root/users.db
-rm /etc/SSHPlus/senha/$nome > /dev/null 2>&1
-rm -rf /etc/SSHPlus/userteste/$nome.sh
-exit" > /etc/SSHPlus/userteste/$nome.sh
-chmod +x /etc/SSHPlus/userteste/$nome.sh
-at -f /etc/SSHPlus/userteste/$nome.sh now + $u_temp min > /dev/null 2>&1
+}
+echo -ne "\033[1;32mPassword:\033[1;37m ";read password
+[[ -z $password ]] && {
+	echo -e "\n${cor1}Password empty or invalid!${scor}\n"
+	exit 1
+}
+sizepass=$(echo ${#password})
+[[ $sizepass -lt 4 ]] && {
+	echo -e "\n${cor1}Short password !, use at least 4 characters${scor}\n"
+	exit 1
+}
+echo -ne "\033[1;32mDays to expire:\033[1;37m ";read dias
+[[ -z $dias ]] && {
+	echo -e "\n${cor1}No number of days!${scor}\n"
+	exit 1
+}
+[[ ${dias} != ?(+|-)+([0-9]) ]] && {
+	echo -e "\n${cor1}You entered an invalid number of days!${scor}\n"
+	exit 1
+}
+[[ $dias -lt 1 ]] && {
+	echo -e "\n${cor1}The number must be greater than zero!${scor}\n"
+	exit 1
+}
+echo -ne "\033[1;32mConnection limit:\033[1;37m ";read sshlimiter
+[[ -z $sshlimiter ]] && {
+	echo -e "\n${cor1}You left the connection limit empty!${scor}\n"
+	exit 1
+}
+[[ ${sshlimiter} != ?(+|-)+([0-9]) ]] && {
+	echo -e "\n${cor1}You entered an invalid number of connection!${scor}\n"
+	exit 1
+}
+[[ $sshlimiter -lt 1 ]] && {
+	echo -e "\n${cor1}Number of simultaneous connections must be greater than zero!${scor}\n"
+	exit 1
+}
+final=$(date "+%Y-%m-%d" -d "+$dias days")
+gui=$(date "+%d/%m/%Y" -d "+$dias days")
+pass=$(perl -e 'print crypt($ARGV[0], "password")' $password)
+useradd -e $final -M -s /bin/false -p $pass $username >/dev/null 2>&1 &
+echo "$password" >/etc/SSHPlus/senha/$username
+echo "$username $sshlimiter" >>/root/users.db
+
 clear
-echo -e "\E[44;1;37m     Test User Created     \E[0m"
-echo ""
-echo -e "\033[1;32mIP:\033[1;37m $IP"
-echo -e "\033[1;32mUsername:\033[1;37m $nome"
-echo -e "\033[1;32mPassword:\033[1;37m $pass"
-echo -e "\033[1;32mLimit:\033[1;37m $limit"
-echo -e "\033[1;32mValidity:\033[1;37m $u_temp Minutos"
-echo ""
-echo -e "\033[1;33mAfter the user defined time"
-echo -e "\033[1;32m$nome \033[1;33mwill be disconnected and deleted.\033[0m"
-exit
+		echo -e "\E[44;1;37m       SSH ACCOUNT CREATED !      \E[0m"
+		echo -e "\n\033[1;32mIP: \033[1;37m$IP"
+		echo -e "\033[1;32mUser: \033[1;37m$username"
+		echo -e "\033[1;32mPassword: \033[1;37m$password"
+		echo -e "\033[1;32mExpires in: \033[1;37m$gui"
+		echo -e "\033[1;32mConnection limit: \033[1;37m$sshlimiter"
 
 #############################
-
 
 service stunnel4 restart
 service ssh restart
