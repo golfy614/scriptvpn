@@ -2,7 +2,8 @@
 cd /etc/stunnel && wget https://raw.githubusercontent.com/golfy614/scriptovpn/main/Install/stunnel.pem && cd $HOME
 
 ##############################
-IP=$(cat /etc/IP)
+IP=$(wget -qO- ipinfo.io/ip)
+domain=$(cat /etc/xray/domain)
 tput setaf 7;tput setab 4;tput bold;printf '%30s%s%-15s\n' "Create SSH User";tput sgr0
 echo ""
 echo -ne "\033[1;32mUsername:\033[1;37m ";read username
@@ -77,6 +78,7 @@ echo "$username $sshlimiter" >>/root/users.db
 clear
 		echo -e "\E[44;1;37m       SSH ACCOUNT CREATED !      \E[0m"
 		echo -e "\n\033[1;32mIP: \033[1;37m$IP"
+        echo -e "\033[1;32mDomain: \033[1;37m$domain"
 		echo -e "\033[1;32mUser: \033[1;37m$username"
 		echo -e "\033[1;32mPassword: \033[1;37m$password"
 		echo -e "\033[1;32mExpires in: \033[1;37m$gui"
