@@ -39,7 +39,7 @@ echo -e "************************************************************"
 echo -e                      เมนูหลัก       
 echo -e "************************************************************"
 echo -e "$NC          1$NC. สร้างบัญชี X-Ray Core        "
-echo -e "$NC          2$NC. สร้างบัญชี SSL Tunnel        "
+echo -e "$NC          2$NC. สร้างบัญชี SSH Tunnel        "
 echo -e "$NC          3$NC. รีสตาร์ทบริการทั้งหมด          "
 echo -e "$NC          4$NC. ตรวจสอบพอร์ต             "
 echo -e "$NC          5$NC. ตรวจสอบบริการ                 "
@@ -57,7 +57,7 @@ case $menu in
 maddxray
 ;;
 2)
-maddssl
+maddssh
 ;;
 3)
 restart-xray

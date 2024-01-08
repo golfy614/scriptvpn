@@ -82,7 +82,7 @@ echo '============================================='
 echo '        กำลังติดตั้ง XRAY CORE '
 echo '============================================='
 sleep 3
-wget https://raw.githubusercontent.com/golfy614/scriptvpn/main/install-tools.sh && chmod +x install-tools.sh && ./install-tools.sh
+wget https://raw.githubusercontent.com/golfy614/scriptvpn/main/install-xray.sh && chmod +x install-xray.sh && ./install-xray.sh
 #
 echo '============================================='
 echo '        กำลังติดตั้ง SSH TUNNEL '
