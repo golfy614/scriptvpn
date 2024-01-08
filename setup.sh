@@ -85,10 +85,10 @@ sleep 3
 wget https://raw.githubusercontent.com/golfy614/scriptvpn/main/install-tools.sh && chmod +x install-tools.sh && ./install-tools.sh
 #
 echo '============================================='
-echo '        กำลังติดตั้ง SSL TUNNEL '
+echo '        กำลังติดตั้ง SSH TUNNEL '
 echo '============================================='
 sleep 3
-wget https://raw.githubusercontent.com/golfy614/scriptvpn/main/install-ssl.sh && chmod +x install-ssl.sh && ./install-ssl.sh
+wget https://raw.githubusercontent.com/golfy614/scriptvpn/main/install-ssh.sh && chmod +x install-ssh.sh && ./install-ssh.sh
 echo '============================================='
 echo '        กำลังติดตั้ง Menu '
 echo '============================================='
@@ -108,6 +108,7 @@ if [[ "$IP" = "" ]]; then
 	rm -rf updatedll.sh
 	rm -rf setup.sh
 	rm -rf install-xray.sh
+	rm -rf install-ssh.sh
 	rm -rf install-tools.sh
 	rm -rf adddomain.sh
 	echo " Reboot 15 Sec"
@@ -128,7 +129,7 @@ else
 	echo ""  | tee -a log-install.txt
 	echo "   >>> บริการ & พอร์ต "  | tee -a log-install.txt
 	echo "   - Nginx                      : 89"  | tee -a log-install.txt
-	echo "   - SSL / TLS                  : 443"  | tee -a log-install.txt
+	echo "   - SSH TUNNEL                 : 444"  | tee -a log-install.txt
 	echo "   - XRAYS TROJAN WS TLS        : 443"  | tee -a log-install.txt
 	echo "   - XRAYS SHADOWSOCKS WS TLS   : 443"  | tee -a log-install.txt
 	echo "   - XRAYS VLESS WS TLS         : 443"  | tee -a log-install.txt
@@ -163,7 +164,7 @@ else
 	rm -rf updatedll.sh
 	rm -rf setup.sh
 	rm -rf install-xray.sh
-	rm -rf install-ssl.sh
+	rm -rf install-ssh.sh
 	rm -rf install-tools.sh
 	rm -rf adddomain.sh
 	sleep 1

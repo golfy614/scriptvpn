@@ -9,6 +9,10 @@ BLUE='\033[0;34m'
 PURPLE='\033[0;35m'
 CYAN='\033[0;36m'
 LIGHT='\033[0;37m'
+OK="${GREEN}[OK]${NC}"
+Error="${RED}[Mistake]${NC}"
+BRED="\e[41m"
+BBLUE="\e[38;5;21m"
 # ==========================================
 #information
 OK = "$ {
@@ -19,57 +23,32 @@ OK = "$ {
 Error = "$ {
   Red
 }[Mistake]$ {
-  Fonts
+  Font
 }"
 clear
-echo -e "$BLUE╔════════════════════════════════════════════╗$LIGHT"
-echo -e "$BLUE║         $ORANGE ✶ SSH & OpenVPN Account ✶   $BLUE      ║ "
-echo -e "$BLUE╠════════════════════════════════════════════╣$LIGHT"
-echo -e "$BLUE║--------------------------------------------║"
-echo -e "$BLUE╠➣$NC 1$NC. Create SSH & OpenVPN Account $BLUE          ║ "
-echo -e "$BLUE╠➣$NC 2$NC. Create SSH & OpenVPN Trial Account  $BLUE   ║ " 
-echo -e "$BLUE╠➣$NC 3$NC. Rennew SSH & OpenVPN Account $BLUE          ║ " 
-echo -e "$BLUE╠➣$NC 4$NC. Check User Login SSH & OpenVPN$BLUE         ║ " 
-echo -e "$BLUE╠➣$NC 5$NC. Daftar Member SSH & OpenVPN $BLUE           ║ " 
-echo -e "$BLUE╠➣$NC 6$NC. Delete SSH & OpenVpn Account$BLUE           ║ " 
-echo -e "$BLUE╠➣$NC 7$NC. Set up Autokill SSH         $BLUE           ║ " 
-echo -e "$BLUE╠➣$NC 8$NC. Displays Users Multi Login  $BLUE           ║ " 
-echo -e "$BLUE╠➣$NC 9$NC. Back To Menu  $BLUE                         ║ " 
-echo -e "$BLUE║--------------------------------------------║"
-echo -e "$BLUE╚════════════════════════════════════════════╝$NC"
-read -p " ➣ Select From Options [ 1 - 9] : " menu
+echo -e ""
+echo -e "************************************************************"
+echo -e "******************* WELCOME TO JAVANET *********************"
+echo -e "****************** Auto Scrip By jAvaNet *******************"
+echo -e "**LINE:javanet**** Whatsapp:+66934567688 *****FB:javajaja***"
+echo -e "************************************************************"
+echo -e "                       SSH Tunnel"
+echo -e "************************************************************"
+echo -e "$NC 1. สร้างบัญชี SSH TLS   "
+echo -e "$NC 2. กลับไปยังเมนูหลัก     "
+echo -e "************************************************************"
+read -p " ➣ โปรดเลือก [ 1 - 2 ]:  " menu
 echo -e ""
 case $menu in
 1)
 addssh
 ;;
 2)
-trialssh
-;;
-3)
-renewssh
-;;
-4)
-cekssh
-;;
-5)
-member
-;;
-6)
-delssh
-;;
-7)
-autokill
-;;
-8)
-ceklim
-;;
-9)
 menu
 ;;
 *)
 clear
-exit
+bash menu
 ;;
 esac
 #

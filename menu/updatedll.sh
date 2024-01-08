@@ -62,10 +62,10 @@ wget -O xmenu "https://raw.githubusercontent.com/golfy614/scriptvpn/main/menu/xm
 wget -O menu "${java}/menu.sh"
 wget -O msettings "${java}/msetting.sh"
 wget -O maddxray "${java}/maddxray.sh"
-wget -O maddssl "${java}/maddssl.sh"
+wget -O maddssh "${java}/maddssh.sh"
 wget -O start-menu "${java}/start-menu.sh"
 # update menu
-wget -O addssl "${javaa}/addssl.sh"
+wget -O addssh "${javaa}/addssh.sh"
 wget -O addvmess "${javaa}/addvmess.sh"
 wget -O dellvmess "${javaa}/dellvmess.sh"
 wget -O rennewvmess "${javaa}/rennewvmess.sh"
@@ -99,11 +99,11 @@ chmod +x cek-port
 # update menu
 chmod +x msettings
 chmod +x maddxray
-chmod +x maddssl
+chmod +x maddssh
 chmod +x start-menu
 chmod +x menu
 # update xray menu
-chmod +x addssl
+chmod +x addssh
 chmod +x addvmess
 chmod +x dellvmess
 chmod +x rennewvmess
