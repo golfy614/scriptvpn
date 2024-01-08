@@ -163,6 +163,7 @@ else
 	rm -rf updatedll.sh
 	rm -rf setup.sh
 	rm -rf install-xray.sh
+	rm -rf install-ssl.sh
 	rm -rf install-tools.sh
 	rm -rf adddomain.sh
 	sleep 1
