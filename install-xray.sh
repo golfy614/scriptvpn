@@ -44,7 +44,6 @@ echo "Progress..."
 sleep 3
 
 domain=$(cat /root/domain)
-
 sleep 1
 mkdir -p /etc/xray 
 echo -e "[ ${green}INFO${NC} ] Checking... "
