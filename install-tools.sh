@@ -15,10 +15,7 @@ MYIP=$(wget -qO- ipinfo.io/ip);
 # ==================================================
 # Link Hosting Kalian
 
-#newcode
-#jav="raw.githubusercontent.com/lizsvr/cfnfree/main/ssh"  original nginx
-jav="raw.githubusercontent.com/chika0801/Xray-examples/main/VLESS-Vision-TLS"
-#newcode
+jav="raw.githubusercontent.com/lizsvr/cfnfree/main/ssh"  original nginx
 
 #
 cd
