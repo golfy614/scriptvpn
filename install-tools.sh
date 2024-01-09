@@ -14,7 +14,11 @@ LIGHT='\033[0;37m'
 MYIP=$(wget -qO- ipinfo.io/ip);
 # ==================================================
 # Link Hosting Kalian
-jav="raw.githubusercontent.com/lizsvr/cfnfree/main/ssh"
+
+#newcode
+#jav="raw.githubusercontent.com/lizsvr/cfnfree/main/ssh"  original nginx
+jav="raw.githubusercontent.com/chika0801/Xray-examples/main/VLESS-Vision-TLS"
+#newcode
 
 #
 cd

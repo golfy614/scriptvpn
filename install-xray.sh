@@ -42,8 +42,10 @@ echo "XRAY Core Vmess / Vless / Trojan / Shadowsocks"
 echo "Trojan"
 echo "Progress..."
 sleep 3
-
+#newcode
 domain=$(cat /root/domain)
+#newcode
+
 sleep 1
 mkdir -p /etc/xray 
 echo -e "[ ${green}INFO${NC} ] Checking... "
@@ -92,6 +94,10 @@ touch /var/log/xray/error2.log
 # / / Ambil Xray Core Version Terbaru
 bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u www-data --version 1.5.6
 
+#newcode
+apt install -y gnupg2 ca-certificates lsb-release debian-archive-keyring && curl https://nginx.org/keys/nginx_signing.key | gpg --dearmor > /usr/share/keyrings/nginx-archive-keyring.gpg && echo "deb [signed-by=/usr/share/keyrings/nginx-archive-keyring.gpg] http://nginx.org/packages/mainline/debian `lsb_release -cs` nginx" > /etc/apt/sources.list.d/nginx.list && echo -e "Package: *\nPin: origin nginx.org\nPin: release o=nginx\nPin-Priority: 900\n" > /etc/apt/preferences.d/99nginx && apt update -y && apt install -y nginx && mkdir -p /etc/systemd/system/nginx.service.d && echo -e "[Service]\nExecStartPost=/bin/sleep 0.1" > /etc/systemd/system/nginx.service.d/override.conf && systemctl daemon-reload
+#newcode
+
 ## crt xray
 systemctl stop nginx
 rm -rf /etc/nginx/conf.d/alone.conf
@@ -106,6 +112,7 @@ echo "0 5 * * * root xp && reboot" >> /etc/crontab
 
 # set uuid
 uuid9=$(cat /proc/sys/kernel/random/uuid)
+domain=$(cat /etc/xray/domain)
 
 uuid=b8458948-a630-4e6d-809a-230b2223ff3d
 
@@ -206,6 +213,30 @@ cat > /etc/xray/config.json << END
            }
         }
      },	
+     ########################newcode
+    "streamSettings": {
+                "network": "tcp",
+                "security": "tls",
+                "tlsSettings": {
+                    "serverName": "${domain}", 
+                    "allowInsecure": true,
+                    "fingerprint": "chrome" 
+                }
+            },
+     {
+            "listen": "127.0.0.1",
+            "port": 10809,
+            "protocol": "http",
+            "sniffing": {
+                "enabled": true,
+                "destOverride": [
+                    "http",
+                    "tls"
+  #vlessxtls
+                ]
+            }
+        }
+     ########################newcode
       {
         "listen": "/run/xray/vless_grpc.sock",
         "protocol": "vless",

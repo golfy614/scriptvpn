@@ -53,6 +53,7 @@ sed -i '/#vlessgrpc$/a\#### '"$user $exp"'\
 xrayvless1="vless://${uuid}@${domain}:$tls?path=/xrayws&security=tls&encryption=none&type=ws#${user}"
 xrayvless2="vless://${uuid}@${domain}:$nontls?path=/xrayws&encryption=none&type=ws#${user}"
 xrayvless3="vless://${uuid}@${domain}:$tls?mode=gun&security=tls&encryption=none&type=grpc&serviceName=vless-grpc&sni=${domain}#${user}"
+xrayvless4="vless://${uuid}@${domain}:$tls?flow=xtls-rprx-vision&fingerprint=chrome&security=tls&encryption=none&type=tcp#${user}"
 systemctl restart xray.service
 service cron restart
 clear
@@ -80,5 +81,7 @@ echo -e "****************************"
 echo -e "Link No TLS : ${xrayvless2}"
 echo -e "****************************"
 echo -e "Link GRPC   : ${xrayvless3}"
+echo -e "****************************"
+echo -e "Link XTLS   : ${xrayvless4}"
 echo -e "****************************"
 echo -e "JAVA"
